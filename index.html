@@ -1,46 +1,42 @@
-<!DOCTYPE html>                                                                                                                                                     
-  <html lang="en">
-  <head>                                                                                                                                                              
-      <meta charset="UTF-8">                                
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Noted - Privacy Policy</title>                                                                                                                           
-      <style>
-          body { font-family: -apple-system, system-ui, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }            
-          h1 { border-bottom: 1px solid #ddd; padding-bottom: 10px; }                                                                                                 
-          h2 { margin-top: 30px; }                                                                                                                                    
-          strong { color: #111; }                                                                                                                                     
-      </style>                                                                                                                                                        
-  </head>                                                   
-  <body>                                                                                                                                                              
-      <h1>Privacy Policy</h1>                               
-      <p><strong>Noted</strong> — Last updated: April 2026</p>
-                                                                                                                                                                      
-      <h2>Summary</h2>
-      <p>Noted does not collect, transmit, or share any user data. Everything you create in the app stays on your device.</p>                                         
-                                                                                                                                                                      
-      <h2>Data Collection</h2>
-      <p>Noted collects <strong>no data whatsoever</strong>. No personal information, no analytics, no telemetry, no crash reports, no advertising identifiers, no    
-  location data. The app does not have the INTERNET permission and is technically incapable of transmitting data off your device.</p>                                 
-   
-      <h2>Data Storage</h2>                                                                                                                                           
-      <p>All data (notes, images, collections) is stored locally on your device and encrypted at rest using AES-256 (SQLCipher for the database, AES-256-GCM for
-  images). Encryption keys are stored in the Android Keystore (hardware-backed on supported devices). There is no account system, no server, and no cloud             
-  component.</p>
-                                                                                                                                                                      
-      <h2>Data Sharing</h2>                                                                                                                                           
-      <p>Noted does not share data with any third party. When you use the export or share features, you are explicitly choosing to send your own data to a destination
-   of your choice. Noted never initiates any data transfer on its own.</p>                                                                                            
-                                                            
-      <h2>Backups</h2>                                                                                                                                                
-      <p>Noted opts out of Android's Auto Backup for all sensitive files (database, encryption keys, PIN hash, images). Non-sensitive preferences (theme, view mode)
-  may be included in Android system backups.</p>                                                                                                                      
-   
-      <h2>Permissions</h2>                                                                                                                                            
-      <p><strong>Camera</strong> — to capture photos for note attachments (only when you tap the camera button).<br>
-      <strong>Biometric</strong> — to offer fingerprint/face unlock alongside the PIN (only if you enable it).<br>                                                    
-      No other permissions are requested.</p>
-                                                                                                                                                                      
-      <h2>Changes</h2>                                                                                                                                                
-      <p>If this policy changes, the updated version will be posted at this URL with a new date.</p>
-  </body>                                                                                                                                                             
-  </html>     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noted - Privacy Policy</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+        h1 { border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        h2 { margin-top: 30px; }
+        strong { color: #111; }
+        code { background: #f4f4f4; padding: 1px 4px; border-radius: 3px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p><strong>Noted</strong> — Last updated: May 2026</p>
+
+    <h2>Summary</h2>
+    <p>Noted does not collect, transmit, or share any user data. Everything you create in the app stays on your device.</p>
+
+    <h2>Data Collection</h2>
+    <p>Noted collects <strong>no data whatsoever</strong>. No personal information, no analytics, no telemetry, no crash reports, no advertising identifiers, no location data. The app does not have the <code>INTERNET</code> permission and is technically incapable of transmitting data off your device.</p>
+
+    <h2>Data Storage</h2>
+    <p>All data you create — notes, collections, images, drawings, and voice recordings — is stored locally on your device and encrypted at rest. Notes, collections, and drawing data are held in a database encrypted with AES-256 via SQLCipher; images, rendered drawings, and voice recordings are stored as separate files, each encrypted with AES-256-GCM. Encryption keys are stored in the Android Keystore (hardware-backed on supported devices). There is no account system, no server, and no cloud component.</p>
+
+    <h2>Data Sharing</h2>
+    <p>Noted does not share data with any third party. When you use the export or share features, you are explicitly choosing to send your own data to a destination of your choice. Noted never initiates any data transfer on its own.</p>
+
+    <h2>Backups</h2>
+    <p>Noted opts out of Android's Auto Backup and device-transfer systems for all sensitive files: the encrypted database, encryption-key material, the PIN hash, stored images and drawings, and voice recordings. Non-sensitive preferences (such as theme and view mode) may be included in Android system backups.</p>
+
+    <h2>Permissions</h2>
+    <p><strong>Microphone</strong> (<code>RECORD_AUDIO</code>) — to record voice memos. Requested only when you first tap the record button, never on app start. If you deny it, every other feature still works; only voice recording is unavailable. Recorded audio is encrypted on the device and never leaves it.<br>
+    <strong>Biometric</strong> (<code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code>) — to offer fingerprint/face unlock alongside the PIN. These are normal Android permissions that are not prompted for; biometric unlock is used only if you enable it.</p>
+    <p>To attach a photo, Noted launches your device's existing camera app and receives the resulting picture. Noted does <strong>not</strong> request the Camera permission and never accesses the camera directly. No other permissions are requested or used.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the updated version will be posted at this URL with a new date.</p>
+</body>
+</html>
