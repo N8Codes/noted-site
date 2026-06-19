@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Noted** — Last updated: May 2026
+**Noted** — Last updated: June 2026
 
 ## Summary
 
@@ -39,12 +39,17 @@ Noted opts out of Android's Auto Backup and device-transfer systems for all sens
 
 ## Permissions
 
-Noted requests only the minimum permissions required for its features:
+Noted keeps permissions to a minimum. The only ones that can touch your content are ones you actively opt into:
 
-- **Microphone** (`RECORD_AUDIO`) — to record voice memos. This permission is requested at the moment you first tap the record button, never on app start. If you deny it, every other feature still works; only voice recording is unavailable. Recorded audio is encrypted on the device and never leaves it.
-- **Biometric** (`USE_BIOMETRIC` / `USE_FINGERPRINT`) — to offer fingerprint/face unlock alongside the PIN. These are normal Android permissions that are not prompted for; biometric unlock is used only if you enable it.
+- **Microphone** (`RECORD_AUDIO`) — to record voice memos. Android prompts you for this at runtime the first time you tap the record button, never on app start, and you can decline. If you deny it, every other feature still works; only voice recording is unavailable. Recorded audio is encrypted on the device and never leaves it.
+- **Biometric** (`USE_BIOMETRIC` / `USE_FINGERPRINT`) — to offer fingerprint or face unlock alongside your PIN or password. These are normal Android permissions granted at install, so there is no separate prompt; biometric unlock only takes effect if you turn it on yourself.
 
-To attach a photo, Noted launches your device's existing camera app and receives the resulting picture. Noted does **not** request the Camera permission and never accesses the camera directly.
+Noted also carries four **normal (non-sensitive) permissions** that are added automatically by standard Android libraries it depends on — chiefly the background-scheduling library (WorkManager) behind the optional home-screen Quick Note widget. These are granted at install, are never prompted for, and there is nothing for you to opt into. None of them can read your notes or send data anywhere:
+
+- `WAKE_LOCK`, `RECEIVE_BOOT_COMPLETED`, and `FOREGROUND_SERVICE` — let that library schedule and run its background work.
+- `ACCESS_NETWORK_STATE` — lets it check whether a network connection exists. This does **not** grant the ability to use the network: Noted still has no `INTERNET` permission and remains incapable of transmitting data off your device.
+
+To attach a photo, Noted launches your device's existing camera app and receives the resulting picture. Noted does **not** request the Camera permission and never accesses the camera directly. The only remaining entry is a private signature permission Android uses internally to keep Noted's own components from being triggered by other apps; it grants no access to your data or to any device feature.
 
 No other permissions are requested or used.
 

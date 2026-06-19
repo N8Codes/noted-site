@@ -1,0 +1,12 @@
+# Internal working notes — kept out of this public repo
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+# macOS / Windows / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
