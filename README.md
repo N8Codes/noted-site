@@ -11,7 +11,7 @@ your device.
 
 Noted is a local-only notebook: there's no account, no server, and no cloud —
 everything you write, draw, and record is encrypted and stays on your own
-device. Core features:
+device unless you export or share it. Core features:
 
 - **Notes & collections** — markdown entries with images, drawings, and audio
 - **Inline drawings** — sketch inside an entry with brushes, fill, text, undo/redo
