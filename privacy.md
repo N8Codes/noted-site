@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Noted** — Last updated: September 2026
+**Noted** — Last updated: November 2026
 
 ## Summary
 
@@ -25,8 +25,8 @@ All data you create — notes, collections, images, drawings, and voice recordin
 
 - Notes, collections, and drawing data are stored in a database encrypted with AES-256 via SQLCipher
 - Images, rendered drawings, and voice recordings are stored as separate files, each encrypted with AES-256-GCM
-- By default the encryption keys are protected by the Android Keystore (hardware-backed on supported devices). If you turn on Enhanced Security, they are instead protected by your PIN or password (and, if you turn it on, your biometric), and are cleared from memory, usually within a few minutes after you leave Noted.
-- While you take a photo, record audio, import, or export, Noted briefly keeps an unencrypted working copy in its private app storage. It is deleted when that step finishes, or the next time Noted starts if the step was interrupted. A photo left over after an interruption is encrypted the next time Noted starts. Exported files are deleted after you save them. Shared exports are kept for about an hour, since the receiving app may still be reading them, and are deleted the next time Noted is opened after that.
+- By default the encryption keys are protected by the Android Keystore (hardware-backed on supported devices). If you turn on Enhanced Security, they are instead protected by your PIN or password (and, if you turn it on, your biometric), and are cleared from memory, usually within about ten minutes after you leave Noted (or a few seconds after you back out of it).
+- While you take a photo, record audio, import, or export, Noted briefly keeps an unencrypted working copy in its private app storage. It is deleted when that step finishes, or the next time Noted starts if the step was interrupted. A photo left over after an interruption is encrypted the next time Noted starts. If it cannot be encrypted (usually because storage is full), Noted tells you, keeps it in its private storage for at most a day while it retries, and deletes it the next time Noted runs after that, telling you if it had to. Exported files are deleted after you save them. Shared exports are kept for about an hour, since the receiving app may still be reading them, and are deleted the next time Noted is opened after that.
 
 There is no account system, no server, and no cloud component.
 
@@ -38,7 +38,7 @@ Your keyboard is a separate app and sees what you type. Noted asks keyboards not
 
 ## Backups
 
-Noted opts out of Android's Auto Backup and device-transfer systems for all sensitive files: the encrypted database, encryption-key material, the PIN hash, stored images and drawings, and voice recordings. Non-sensitive user preferences (such as theme and view mode) may be included in Android system backups.
+Noted opts out of Android's Auto Backup and device-transfer systems for all sensitive files: the encrypted database, encryption-key material, the PIN or password hash, stored images and drawings, and voice recordings. Non-sensitive user preferences (such as theme and view mode) may be included in Android system backups.
 
 ## Permissions
 
@@ -58,7 +58,21 @@ No other permissions are requested or used.
 
 ## Retention and Deletion
 
-Your data stays on your device until you delete it. Deleting an entry or collection removes it and its attachments from Noted. Uninstalling Noted or clearing its app storage permanently deletes all of its data and keys. Noted keeps no copy anywhere else.
+Your data stays on your device until you delete it. Deleting an entry or collection removes it and its attachments (images, drawings and voice recordings) from Noted at once. Uninstalling Noted or clearing its app storage permanently deletes all of its data and keys. Noted keeps no copy anywhere else.
+
+## Noted for macOS (beta)
+
+The sections above describe Noted for Android. Everything they say about data collection and data sharing applies to Noted for macOS too. These parts work differently on a Mac:
+
+- **No network.** Noted for macOS runs in the macOS App Sandbox without the network permission, so macOS itself stops it from connecting to the internet. A link you tap in a note opens in your web browser, outside Noted.
+- **Where your data is.** Your notes are kept in Noted's private sandbox folder, `~/Library/Containers/com.nwh.noted/`, encrypted the same way as on Android: the database with AES-256 via SQLCipher, and images, drawings and voice recordings each with AES-256-GCM.
+- **Encryption keys.** The keys are kept in your macOS login keychain and are not synced to iCloud Keychain. macOS may ask whether Noted may use it. Choosing "Always Allow" stops the question until Noted is updated, when macOS asks once more. If you turn on Enhanced Security, the key to the database is instead protected by your PIN or password, while the key for images and recordings stays in the keychain. Biometric unlock is not offered on macOS.
+- **Working copies.** While you record or play back a voice memo, Noted keeps an unencrypted working copy in its private sandbox folder. It is deleted when you finish, or the next time Noted starts if it was interrupted. Photos you take are captured in memory and encrypted before they are saved. Files prepared for sharing are deleted the next time Noted starts.
+- **Photo details.** Noted removes location and camera details (EXIF and similar metadata) from the photos it stores and from the images you export.
+- **Camera and microphone.** Unlike on Android, Noted for macOS uses your Mac's camera directly to take a photo. macOS asks the first time Noted wants the camera or the microphone, and you can decline. Every other feature still works.
+- **Files.** Noted can open or save only the files you choose in an Open or Save window.
+- **Backups.** Noted's files and your login keychain may be included in Time Machine or other backups of your Mac, like any other files. Noted's files stay encrypted there.
+- **Removing Noted.** Moving Noted to the Trash does not delete your notes or keys. To remove them, delete the folder `~/Library/Containers/com.nwh.noted/` and, in Keychain Access, the items named `flutter_secure_storage_service` whose account starts with `noted_`.
 
 ## Changes
 

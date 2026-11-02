@@ -16,13 +16,14 @@ device unless you export or share it. Core features:
 - **Notes & collections** — markdown entries with images, drawings, and audio
 - **Inline drawings** — sketch inside an entry with brushes, fill, text, undo/redo
 - **Voice memos** — record and play back audio attached to any entry
-- **Real markdown** — CommonMark + GitHub-flavored tables, task lists, code blocks
+- **Real markdown** — headings, lists, task lists, code blocks, links, GitHub-flavored tables
 - **Encrypted at rest** — AES-256 database plus per-file encryption for media
 - **Export & import** — encrypted or plain backups, single-entry markdown round-trip
 - **No tracking** — no analytics, no telemetry, no crash reporting, no ads
 
-Noted is available on Android, with desktop betas for **macOS** and **Linux**
-in development.
+Noted is available on Android. A **macOS beta** is available from the
+[home page](https://n8codes.github.io/noted-site/home.html#macos-beta).
+**Linux** is in development.
 
 ## What's in this repo
 
@@ -33,6 +34,7 @@ in development.
 | `home.html`      | Landing page: intro to Noted, download links, site nav.       |
 | `about.html`     | About page.                                                   |
 | `styles.css`     | Shared styles for `home.html`, `about.html`, and `index.html`.|
+| `downloads/`     | macOS beta DMG and its `.sha256` checksum.                    |
 | `icon.png`       | Site icon / favicon — the Noted app icon (512px).             |
 
 > **Why the privacy policy is the root page:** the Noted Android app links to the

@@ -31,7 +31,7 @@
     <main>
         <div class="container">
             <section class="hero" id="download">
-                <span class="badge">Now available on Android</span>
+                <span class="badge">Now available on Android &middot; macOS beta</span>
                 <h1>Welcome to Noted</h1>
                 <p class="tagline">A privacy-first, local-only note-taking app. Everything you write, draw, and record is encrypted and stays on your device unless you export or share it — no account, no server, no cloud.</p>
 
@@ -40,16 +40,16 @@
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 0 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H6a1 1 0 0 1-1-1z"/></svg>
                         <span>Download Noted <span class="sub">on mobile</span></span>
                     </a>
-                    <span class="btn disabled" role="button" aria-disabled="true">
+                    <a class="btn" href="downloads/Noted-1.0.0-beta.1-macos.dmg" download>
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.84c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.69 2.35 2.89 2.3 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.44-3.68zM14.2 6.09c.64-.78 1.07-1.85.95-2.93-.92.04-2.04.61-2.7 1.39-.59.69-1.11 1.8-.97 2.85 1.03.08 2.08-.52 2.72-1.31z"/></svg>
-                        <span>macOS <span class="sub">in development</span></span>
-                    </span>
+                        <span>macOS <span class="sub">beta</span></span>
+                    </a>
                     <span class="btn disabled" role="button" aria-disabled="true">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a4.2 4.2 0 0 0-4.2 4.2c0 1.2.2 2.3.2 3.4 0 1.3-.9 2.2-1.7 3.3-.9 1.2-1.9 2.5-1.9 4.3 0 .7.3 1.2.8 1.5-.1.4-.2.8-.2 1.1 0 1 .8 1.7 2 1.9.5.1 1 .3 1.5.6.6.4 1.2.7 2 .7s1.4-.3 2-.7c.5-.3 1-.5 1.5-.6 1.2-.2 2-.9 2-1.9 0-.3-.1-.7-.2-1.1.5-.3.8-.8.8-1.5 0-1.8-1-3.1-1.9-4.3-.8-1.1-1.7-2-1.7-3.3 0-1.1.2-2.2.2-3.4A4.2 4.2 0 0 0 12 2zm-1.6 4.1c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9zm3.2 0c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9z"/></svg>
                         <span>Linux <span class="sub">in development</span></span>
                     </span>
                 </div>
-                <p class="note-line">macOS &amp; Linux desktop betas in development &middot; Noted for Android is available now.</p>
+                <p class="note-line">Noted for Android is available now &middot; macOS beta below &middot; Linux in development.</p>
             </section>
         </div>
 
@@ -77,10 +77,40 @@
                         <p>Exactly what Noted does and doesn't do with your data — no analytics, no telemetry, nothing leaves your device on its own.</p>
                     </div>
                     <div class="card">
-                        <h3><a href="#download">Desktop versions →</a></h3>
-                        <p>Desktop builds for macOS and Linux are in development. Noted for Android is available today.</p>
+                        <h3><a href="#macos-beta">Noted for macOS (beta) →</a></h3>
+                        <p>An early macOS build to try, with install and checksum steps. Linux is in development. Noted for Android is available today.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="alt" id="macos-beta">
+            <div class="container prose">
+                <h2>Noted for macOS (beta)</h2>
+                <p>This is an early test build, shared as it is: no promises, and it may change or break. It reads and writes the same encrypted <code>.noted</code> backups as Noted for Android, so you can move notes between the two. Before relying on it, keep a <code>.noted</code> export of anything you care about.</p>
+                <p><strong>Requirements:</strong> macOS 10.15 or later, Intel or Apple silicon (one download for both). Tested on macOS 26.</p>
+
+                <h3>Install</h3>
+                <ol>
+                    <li>Download <a href="downloads/Noted-1.0.0-beta.1-macos.dmg" download><code>Noted-1.0.0-beta.1-macos.dmg</code></a> (27 MB).</li>
+                    <li>Open it and drag <strong>Noted</strong> onto <strong>Applications</strong>.</li>
+                    <li>The beta is not notarized by Apple, so macOS blocks the first launch. Open Noted once, then go to <strong>System Settings &rarr; Privacy &amp; Security</strong> and click <strong>Open Anyway</strong> next to the Noted message, then confirm with <strong>Open Anyway</strong> once more.</li>
+                    <li>When macOS asks whether Noted may use your keychain, enter your Mac password and choose <strong>Always Allow</strong>. Noted keeps its encryption keys there. Because the beta isn't signed with an Apple developer certificate, macOS asks again after each update.</li>
+                </ol>
+
+                <h3>Verify the download</h3>
+                <p>In Terminal, run:</p>
+                <p><code>shasum -a 256 ~/Downloads/Noted-1.0.0-beta.1-macos.dmg</code></p>
+                <p>The long code it prints first must be exactly:</p>
+                <p><code class="hash">a55abe1550908d46ce3e71a169ca85446d9d1dc04cf5f3809eb390381230cd60</code></p>
+                <p>Also published as <a href="downloads/Noted-1.0.0-beta.1-macos.dmg.sha256">Noted-1.0.0-beta.1-macos.dmg.sha256</a>. If it doesn't match, don't open the file.</p>
+
+                <h3>Good to know</h3>
+                <ul>
+                    <li>Your notes are encrypted with keys kept in your Mac's login keychain. If those keychain items are deleted, the notes can't be opened again. That's by design, and it's why an export is worth keeping.</li>
+                    <li>Moving Noted to the Trash doesn't delete your notes. The <a href="index.html">privacy policy</a> explains where they're kept and how to remove them.</li>
+                    <li>Biometric unlock isn't offered on macOS. Use a PIN or password.</li>
+                    <li>Tried the earlier test build from June? This one keeps its notes in a new, private folder, so it starts empty. Export a <code>.noted</code> backup from the old build first, then import it here.</li>
+                </ul>
             </div>
         </section>
     </main>
