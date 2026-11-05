@@ -21,24 +21,21 @@ The app does not have the `INTERNET` permission and is technically incapable of 
 
 ## Data Storage
 
-All data you create — notes, collections, images, drawings, and voice recordings — is stored locally on your device and encrypted at rest:
+All data you create — notes, collections, images, drawings, and voice recordings — is stored locally on your device and encrypted at rest. Notes, collections, and drawing data are held in a database encrypted with AES-256 via SQLCipher. Images, rendered drawings, and voice recordings are stored as separate files, each encrypted with AES-256-GCM. By default the encryption keys are protected by the Android Keystore (hardware-backed on supported devices). If you turn on Enhanced Security, they are instead protected by your PIN or password (and, if you turn it on, your biometric), and are cleared from memory, usually within about ten minutes after you leave Noted (or a few seconds after you back out of it).
 
-- Notes, collections, and drawing data are stored in a database encrypted with AES-256 via SQLCipher
-- Images, rendered drawings, and voice recordings are stored as separate files, each encrypted with AES-256-GCM
-- By default the encryption keys are protected by the Android Keystore (hardware-backed on supported devices). If you turn on Enhanced Security, they are instead protected by your PIN or password (and, if you turn it on, your biometric), and are cleared from memory, usually within about ten minutes after you leave Noted (or a few seconds after you back out of it).
-- While you take a photo, record audio, import, or export, Noted briefly keeps an unencrypted working copy in its private app storage. It is deleted when that step finishes, or the next time Noted starts if the step was interrupted. A photo left over after an interruption is encrypted the next time Noted starts. If it cannot be encrypted (usually because storage is full), Noted tells you, keeps it in its private storage for at most a day while it retries, and deletes it the next time Noted runs after that, telling you if it had to. Exported files are deleted after you save them. Shared exports are kept for about an hour, since the receiving app may still be reading them, and are deleted the next time Noted is opened after that.
+While you take a photo, record audio, import, or export, Noted briefly keeps an unencrypted working copy in its private app storage. It is deleted when that step finishes, or the next time Noted starts if the step was interrupted. A photo left over after an interruption is encrypted the next time Noted starts. If it cannot be encrypted (usually because storage is full), Noted tells you, keeps it in its private storage for at most a day while it retries, and deletes it the next time Noted runs after that, telling you if it had to. Exported files are deleted after you save them. Shared exports are kept for about an hour, since the receiving app may still be reading them, and are deleted the next time Noted is opened after that.
 
 There is no account system, no server, and no cloud component.
 
 ## Data Sharing
 
-Noted does not share data with any third party. When you use the app's export or share features, you are explicitly choosing to send your own data to a destination of your choice (email, file manager, another app, etc.). Noted never initiates any data transfer on its own.
+Noted does not share data with any third party. When you use the export or share features, you are explicitly choosing to send your own data to a destination of your choice. Noted never initiates any data transfer on its own.
 
 Your keyboard is a separate app and sees what you type. Noted asks keyboards not to learn from it (Private input, on by default), but what a keyboard does is covered by its own privacy policy.
 
 ## Backups
 
-Noted opts out of Android's Auto Backup and device-transfer systems for all sensitive files: the encrypted database, encryption-key material, the PIN or password hash, stored images and drawings, and voice recordings. Non-sensitive user preferences (such as theme and view mode) may be included in Android system backups.
+Noted opts out of Android's Auto Backup and device-transfer systems for all sensitive files: the encrypted database, encryption-key material, the PIN or password hash, stored images and drawings, and voice recordings. Non-sensitive preferences (such as theme and view mode) may be included in Android system backups.
 
 ## Permissions
 
@@ -76,4 +73,4 @@ The sections above describe Noted for Android. Everything they say about data co
 
 ## Changes
 
-If this policy changes, the updated version will be posted here with a new "Last updated" date.
+If this policy changes, the updated version will be posted at this URL with a new date.

@@ -37,7 +37,16 @@
                 <p>Noted does not collect, transmit, or share any user data. Everything you create in the app stays on your device unless you export or share it.</p>
 
                 <h2>Data Collection</h2>
-                <p>Noted collects <strong>no data whatsoever</strong>. No personal information, no analytics, no telemetry, no crash reports, no advertising identifiers, no location data. The app does not have the <code>INTERNET</code> permission and is technically incapable of transmitting data off your device.</p>
+                <p>Noted collects <strong>no data whatsoever</strong>. Specifically:</p>
+                <ul>
+                    <li>No personal information</li>
+                    <li>No usage analytics or telemetry</li>
+                    <li>No crash reports</li>
+                    <li>No advertising identifiers</li>
+                    <li>No cookies or tracking pixels</li>
+                    <li>No location data</li>
+                </ul>
+                <p>The app does not have the <code>INTERNET</code> permission and is technically incapable of transmitting data off your device.</p>
 
                 <h2>Data Storage</h2>
                 <p>All data you create — notes, collections, images, drawings, and voice recordings — is stored locally on your device and encrypted at rest. Notes, collections, and drawing data are held in a database encrypted with AES-256 via SQLCipher. Images, rendered drawings, and voice recordings are stored as separate files, each encrypted with AES-256-GCM. By default the encryption keys are protected by the Android Keystore (hardware-backed on supported devices). If you turn on Enhanced Security, they are instead protected by your PIN or password (and, if you turn it on, your biometric), and are cleared from memory, usually within about ten minutes after you leave Noted (or a few seconds after you back out of it).</p>
