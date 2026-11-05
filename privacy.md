@@ -71,6 +71,10 @@ The sections above describe Noted for Android. Everything they say about data co
 - **Backups.** Noted's files and your login keychain may be included in Time Machine or other backups of your Mac, like any other files. Noted's files stay encrypted there.
 - **Removing Noted.** Moving Noted to the Trash does not delete your notes or keys. To remove them, delete the folder `~/Library/Containers/com.nwh.noted/` and, in Keychain Access, the items named `flutter_secure_storage_service` whose account starts with `noted_`.
 
+## Contact
+
+Questions about this policy or your data can be sent to N8Codes at [n8codesandcreates@gmail.com](mailto:n8codesandcreates@gmail.com).
+
 ## Changes
 
 If this policy changes, the updated version will be posted at this URL with a new date.
