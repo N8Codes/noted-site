@@ -71,6 +71,22 @@ The sections above describe Noted for Android. Everything they say about data co
 - **Backups.** Noted's files and your login keychain may be included in Time Machine or other backups of your Mac, like any other files. Noted's files stay encrypted there.
 - **Removing Noted.** Moving Noted to the Trash does not delete your notes or keys. To remove them, delete the folder `~/Library/Containers/com.nwh.noted/` and, in Keychain Access, the items named `flutter_secure_storage_service` whose account starts with `noted_`.
 
+## Noted for iPhone (beta)
+
+The sections above describe Noted for Android. Everything they say about data collection and data sharing applies to Noted for iPhone too. These parts work differently on an iPhone:
+
+- **No network.** iOS has no internet permission for an app to leave out, as Noted does on Android. Instead, Noted for iPhone contains no networking code at all.
+- **Encryption keys.** The key is kept in the iOS Keychain instead of the Android Keystore, for this device only, so it is not synced to iCloud Keychain and never moves to another device. Biometric unlock uses Face ID or Touch ID. With Enhanced Security, the key is cleared from memory within about 30 seconds of Noted going to the background, not after about ten minutes. Noted first gives work in progress, such as a save, a little time to finish. Returning to Noted after that always asks you to unlock.
+- **Working copies.** Instead of the working copies described above: while you record a voice memo, the recording is kept unencrypted in Noted's private temporary storage until it is saved or discarded. While a backup is imported, parts of it, including note text, may be written to protected working files that have no name on disk, and they are removed when the import ends. Files prepared for sharing or saving are deleted when you close the share sheet, or, once they are an hour old, the next time Noted starts or locks. Apart from a password-protected backup, they are unencrypted. An interrupted recording or import is deleted the next time Noted starts. Photos you take are captured in memory and encrypted before they are saved, so there is no leftover photo to recover.
+- **Sharing into Noted.** Text, links and images you share from another app are encrypted before Noted stores them, and are added to a note only after you unlock Noted. A share that is interrupted is removed at a later start.
+- **Opening files.** When you open a file in Noted from Mail, AirDrop or some other apps, iOS gives Noted its own copy of it in the `Documents/Inbox` folder. Noted deletes that copy once it is handled, or the next time you unlock Noted, once it is 10 minutes old. Until then it is included in device backups, like the original.
+- **Camera, microphone and Face ID.** Noted for iPhone uses the camera directly, not another camera app. iOS asks the first time Noted wants the camera, the microphone or Face ID, and you can decline. Every other feature still works.
+- **Keyboard.** There is no Private input setting, because iOS has no equivalent of it. PIN and password fields use iOS secure text entry. What a keyboard does is covered by its own privacy policy.
+- **Copying.** Text you copy from a note's text stays on this iPhone (it is not offered to your other devices) and is removed from the clipboard after two minutes. Text copied from other fields, such as a title, and files copied from the share sheet use the normal iOS clipboard.
+- **Backups.** Instead of Android's Auto Backup: your notes, images, drawings and recordings are excluded from iCloud and computer backups. Display settings, such as the theme and sort order, may be included. Use Export to make a `.noted` backup to keep a copy or move to a new phone.
+- **Screenshots.** iOS does not let apps block screenshots. Noted hides its content in the app switcher and while the screen is recorded or mirrored, but a screenshot can still capture what is on screen.
+- **Removing Noted.** Deleting Noted from your iPhone deletes its notes. iOS may keep Noted's key in the Keychain afterwards. It cannot open anything on its own, and Noted deletes it if you install Noted again.
+
 ## Contact
 
 Questions about this policy or your data can be sent to N8Codes at [n8codesandcreates@gmail.com](mailto:n8codesandcreates@gmail.com).
