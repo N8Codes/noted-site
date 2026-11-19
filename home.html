@@ -40,7 +40,7 @@
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 0 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 0 1 0 2H6a1 1 0 0 1-1-1z"/></svg>
                         <span>Download Noted <span class="sub">on mobile</span></span>
                     </a>
-                    <a class="btn" href="downloads/Noted-1.0.0-beta.1-macos.dmg" download>
+                    <a class="btn" href="downloads/Noted-1.0.0-beta.2-macos.dmg" download>
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.84c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.69 2.35 2.89 2.3 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.44-3.68zM14.2 6.09c.64-.78 1.07-1.85.95-2.93-.92.04-2.04.61-2.7 1.39-.59.69-1.11 1.8-.97 2.85 1.03.08 2.08-.52 2.72-1.31z"/></svg>
                         <span>macOS <span class="sub">beta</span></span>
                     </a>
@@ -91,7 +91,7 @@
 
                 <h3>Install</h3>
                 <ol>
-                    <li>Download <a href="downloads/Noted-1.0.0-beta.1-macos.dmg" download><code>Noted-1.0.0-beta.1-macos.dmg</code></a> (27 MB).</li>
+                    <li>Download <a href="downloads/Noted-1.0.0-beta.2-macos.dmg" download><code>Noted-1.0.0-beta.2-macos.dmg</code></a> (28 MB).</li>
                     <li>Open it and drag <strong>Noted</strong> onto <strong>Applications</strong>.</li>
                     <li>The beta is not notarized by Apple, so macOS blocks the first launch. Open Noted once, then go to <strong>System Settings &rarr; Privacy &amp; Security</strong> and click <strong>Open Anyway</strong> next to the Noted message, then confirm with <strong>Open Anyway</strong> once more.</li>
                     <li>When macOS asks whether Noted may use your keychain, enter your Mac password and choose <strong>Always Allow</strong>. Noted keeps its encryption keys there. Because the beta isn't signed with an Apple developer certificate, macOS asks again after each update.</li>
@@ -99,10 +99,12 @@
 
                 <h3>Verify the download</h3>
                 <p>In Terminal, run:</p>
-                <p><code>shasum -a 256 ~/Downloads/Noted-1.0.0-beta.1-macos.dmg</code></p>
+                <p><code>shasum -a 256 ~/Downloads/Noted-1.0.0-beta.2-macos.dmg</code></p>
                 <p>The long code it prints first must be exactly:</p>
-                <p><code class="hash">a55abe1550908d46ce3e71a169ca85446d9d1dc04cf5f3809eb390381230cd60</code></p>
-                <p>Also published as <a href="downloads/Noted-1.0.0-beta.1-macos.dmg.sha256">Noted-1.0.0-beta.1-macos.dmg.sha256</a>. If it doesn't match, don't open the file.</p>
+                <p><code class="hash">5062eee2bcdfb0f137aa092cb1760e61f6cbd2ccd32b092d618da778cebee857</code></p>
+                <p>Also published as <a href="downloads/Noted-1.0.0-beta.2-macos.dmg.sha256">Noted-1.0.0-beta.2-macos.dmg.sha256</a>. If it doesn't match, don't open the file.</p>
+
+                <p><strong>Installed beta 1?</strong> Beta 1 did not encrypt its database. Update to beta 2, which encrypts it on first launch.</p>
 
                 <h3>Good to know</h3>
                 <ul>
