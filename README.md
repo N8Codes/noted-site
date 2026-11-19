@@ -21,9 +21,10 @@ device unless you export or share it. Core features:
 - **Export & import** — encrypted or plain backups, single-entry markdown round-trip
 - **No tracking** — no analytics, no telemetry, no crash reporting, no ads
 
-Noted is available on Android. A **macOS beta** is available from the
-[home page](https://n8codes.github.io/noted-site/home.html#macos-beta).
-**Linux** is in development.
+Noted is available on Android. A **macOS beta** and a **Linux beta** are
+available from the home page
+([macOS](https://n8codes.github.io/noted-site/home.html#macos-beta),
+[Linux](https://n8codes.github.io/noted-site/home.html#linux-beta)).
 
 ## What's in this repo
 
@@ -34,7 +35,7 @@ Noted is available on Android. A **macOS beta** is available from the
 | `home.html`      | Landing page: intro to Noted, download links, site nav.       |
 | `about.html`     | About page.                                                   |
 | `styles.css`     | Shared styles for `home.html`, `about.html`, and `index.html`.|
-| `downloads/`     | macOS beta DMG and its `.sha256` checksum.                    |
+| `downloads/`     | macOS beta DMG, Linux beta tarball, and their `.sha256` checksums. |
 | `icon.png`       | Site icon / favicon — the Noted app icon (512px).             |
 
 > **Why the privacy policy is the root page:** the Noted Android app links to the

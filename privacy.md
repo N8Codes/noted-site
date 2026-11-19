@@ -71,6 +71,21 @@ The sections above describe Noted for Android. Everything they say about data co
 - **Backups.** Noted's files and your login keychain may be included in Time Machine or other backups of your Mac, like any other files. Noted's files stay encrypted there.
 - **Removing Noted.** Moving Noted to the Trash does not delete your notes or keys. To remove them, delete the folder `~/Library/Containers/com.nwh.noted/` and, in Keychain Access, the items named `flutter_secure_storage_service` whose account starts with `noted_`.
 
+## Noted for Linux (beta)
+
+The sections above describe Noted for Android. Everything they say about data collection and data sharing applies to Noted for Linux too. These parts work differently on Linux:
+
+- **No network.** This download runs without an app sandbox, and Linux has no internet permission like Android and macOS have, so the operating system does not stop Noted from connecting. Noted itself never does: it has no feature that uses the internet, and voice memos are played only from files on your computer. A link you tap in a note opens in your web browser, outside Noted.
+- **Where your data is.** Your notes are kept in `~/.local/share/com.nwh.noted/`, encrypted the same way as on Android: the database with AES-256 in the SQLCipher format, and images, drawings and voice recordings each with AES-256-GCM.
+- **Encryption keys.** The keys are kept in your login keyring (for example GNOME Keyring), in an entry named `com.nwh.noted/FlutterSecureStorage`. The keyring is usually unlocked when you log in. If you turn on Enhanced Security, the key to the database is instead protected by your PIN or password, while the key for images and recordings stays in the keyring. Biometric unlock is not offered on Linux.
+- **Working copies.** While you record or play back a voice memo, Noted keeps an unencrypted working copy in `~/.local/share/com.nwh.noted/tmp/`, a folder only your user account can open. It is deleted when you finish, or the next time Noted starts if it was interrupted. A single image or recording you export is prepared unencrypted in `~/.local/share/com.nwh.noted/cache/shared/` and deleted the next time Noted starts.
+- **Voice memos.** To record, Noted runs your system's `parecord` and `ffmpeg` programs, and it plays recordings with the system's libmpv library. All of them run on your computer. Linux does not ask before an app uses the microphone. Noted uses it only while you are recording.
+- **Photo details.** Noted removes location and camera details (EXIF and similar metadata) from the photos it stores and from the images you export.
+- **Camera.** Noted for Linux does not use a camera. You add images from files you choose.
+- **Files.** Noted opens or saves only the files you choose in an Open or Save window. Unlike on a Mac, Linux does not enforce this, so it rests on Noted.
+- **Backups.** Noted's folder and your keyring may be included in backups of your home folder, like any other files. Noted's files stay encrypted there.
+- **Removing Noted.** Deleting the `Noted` folder you unpacked does not delete your notes or keys. To remove them, delete the folder `~/.local/share/com.nwh.noted/` and, in your keyring manager (Passwords and Keys on Ubuntu and Linux Mint), the login keyring entry `com.nwh.noted/FlutterSecureStorage`. The keyring may also hold an entry named `FlutterSecureStorage Control`, which contains no Noted data and may be used by other apps.
+
 ## Noted for iPhone (beta)
 
 The sections above describe Noted for Android. Everything they say about data collection and data sharing applies to Noted for iPhone too. These parts work differently on an iPhone:

@@ -31,7 +31,7 @@
     <main>
         <div class="container">
             <section class="hero" id="download">
-                <span class="badge">Now available on Android &middot; macOS beta</span>
+                <span class="badge">Now available on Android &middot; macOS and Linux beta</span>
                 <h1>Welcome to Noted</h1>
                 <p class="tagline">A privacy-first, local-only note-taking app. Everything you write, draw, and record is encrypted and stays on your device unless you export or share it — no account, no server, no cloud.</p>
 
@@ -44,12 +44,12 @@
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.84c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.69 2.35 2.89 2.3 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.72c1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.44-3.68zM14.2 6.09c.64-.78 1.07-1.85.95-2.93-.92.04-2.04.61-2.7 1.39-.59.69-1.11 1.8-.97 2.85 1.03.08 2.08-.52 2.72-1.31z"/></svg>
                         <span>macOS <span class="sub">beta</span></span>
                     </a>
-                    <span class="btn disabled" role="button" aria-disabled="true">
+                    <a class="btn" href="#linux-beta">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a4.2 4.2 0 0 0-4.2 4.2c0 1.2.2 2.3.2 3.4 0 1.3-.9 2.2-1.7 3.3-.9 1.2-1.9 2.5-1.9 4.3 0 .7.3 1.2.8 1.5-.1.4-.2.8-.2 1.1 0 1 .8 1.7 2 1.9.5.1 1 .3 1.5.6.6.4 1.2.7 2 .7s1.4-.3 2-.7c.5-.3 1-.5 1.5-.6 1.2-.2 2-.9 2-1.9 0-.3-.1-.7-.2-1.1.5-.3.8-.8.8-1.5 0-1.8-1-3.1-1.9-4.3-.8-1.1-1.7-2-1.7-3.3 0-1.1.2-2.2.2-3.4A4.2 4.2 0 0 0 12 2zm-1.6 4.1c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9zm3.2 0c.4 0 .7.4.7.9s-.3.9-.7.9-.7-.4-.7-.9.3-.9.7-.9z"/></svg>
-                        <span>Linux <span class="sub">in development</span></span>
-                    </span>
+                        <span>Linux <span class="sub">beta</span></span>
+                    </a>
                 </div>
-                <p class="note-line">Noted for Android is available now &middot; macOS beta below &middot; Linux in development.</p>
+                <p class="note-line">Noted for Android is available now &middot; macOS and Linux betas below.</p>
             </section>
         </div>
 
@@ -78,7 +78,11 @@
                     </div>
                     <div class="card">
                         <h3><a href="#macos-beta">Noted for macOS (beta) →</a></h3>
-                        <p>An early macOS build to try, with install and checksum steps. Linux is in development. Noted for Android is available today.</p>
+                        <p>An early macOS build to try, with install and checksum steps. Noted for Android is available today.</p>
+                    </div>
+                    <div class="card">
+                        <h3><a href="#linux-beta">Noted for Linux (beta) →</a></h3>
+                        <p>An early Linux build for Ubuntu and Linux Mint, with install and checksum steps.</p>
                     </div>
                 </div>
             </div>
@@ -112,6 +116,36 @@
                     <li>Moving Noted to the Trash doesn't delete your notes. The <a href="index.html">privacy policy</a> explains where they're kept and how to remove them.</li>
                     <li>Biometric unlock isn't offered on macOS. Use a PIN or password.</li>
                     <li>Tried the earlier test build from June? This one keeps its notes in a new, private folder, so it starts empty. Export a <code>.noted</code> backup from the old build first, then import it here.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="linux-beta">
+            <div class="container prose">
+                <h2>Noted for Linux (beta)</h2>
+                <p>This is an early test build, shared as it is: no promises, and it may change or break. It reads and writes the same encrypted <code>.noted</code> backups as Noted for Android and macOS, so you can move notes between them. Before relying on it, keep a <code>.noted</code> export of anything you care about.</p>
+                <p><strong>Requirements:</strong> 64-bit Linux on an Intel or AMD processor (x86_64) with a desktop keyring such as GNOME Keyring, which Ubuntu and Linux Mint include. Built for Ubuntu 22.04 and Linux Mint 21 or later. Tested on Linux Mint 22.2.</p>
+
+                <h3>Install</h3>
+                <ol>
+                    <li>Download <a href="downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz" download><code>Noted-1.0.0-beta.2-linux-x86_64.tar.gz</code></a> (14 MB) and check it as shown below.</li>
+                    <li>In a terminal, unpack it into its own folder (this creates <code>~/Apps/Noted</code>; unpacking replaces files of the same name, so don't use a folder that holds your own files): <code>mkdir -p ~/Apps &amp;&amp; tar -xzf ~/Downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz -C ~/Apps</code></li>
+                    <li>Start it with <code>~/Apps/Noted/noted</code>. There is no installer or menu entry yet: Noted runs from that folder.</li>
+                    <li>For voice memos, install the audio programs Noted uses: <code>sudo apt install libmpv2 ffmpeg pulseaudio-utils</code> (on Ubuntu 22.04 and Linux Mint 21, <code>libmpv1</code> instead of <code>libmpv2</code>). Without them everything else works, and Noted tells you what is missing when you try to record.</li>
+                </ol>
+
+                <h3>Verify the download</h3>
+                <p>In a terminal, run:</p>
+                <p><code>sha256sum ~/Downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz</code></p>
+                <p>The long code it prints first must be exactly:</p>
+                <p><code class="hash">1515723107086a5a968cba142703ebc4539ffd1eb23dcf652effc8badee47c15</code></p>
+                <p>Also published as <a href="downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz.sha256">Noted-1.0.0-beta.2-linux-x86_64.tar.gz.sha256</a>. If it doesn't match, don't unpack the file.</p>
+
+                <h3>Good to know</h3>
+                <ul>
+                    <li>Your notes are encrypted with keys kept in your login keyring. If that keyring entry is deleted, the notes can't be opened again. That's by design, and it's why an export is worth keeping.</li>
+                    <li>Deleting the <code>Noted</code> folder doesn't delete your notes. The <a href="index.html">privacy policy</a> explains where they're kept and how to remove them.</li>
+                    <li>Biometric unlock isn't offered on Linux. Use a PIN or password.</li>
+                    <li>Only one copy of Noted can be open at a time. Starting a second one shows a message instead of switching to the open window.</li>
                 </ul>
             </div>
         </section>
