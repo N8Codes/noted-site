@@ -49,7 +49,7 @@
                         <span>Linux <span class="sub">beta</span></span>
                     </a>
                 </div>
-                <p class="note-line">Noted for Android is available now &middot; macOS and Linux betas below.</p>
+                <p class="note-line">Noted for Android is available now &middot; macOS and Linux betas above.</p>
             </section>
         </div>
 
@@ -127,22 +127,21 @@
 
                 <h3>Install</h3>
                 <ol>
-                    <li>Download <a href="downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz" download><code>Noted-1.0.0-beta.2-linux-x86_64.tar.gz</code></a> (14 MB) and check it as shown below.</li>
-                    <li>In a terminal, unpack it into its own folder (this creates <code>~/Apps/Noted</code>; unpacking replaces files of the same name, so don't use a folder that holds your own files): <code>mkdir -p ~/Apps &amp;&amp; tar -xzf ~/Downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz -C ~/Apps</code></li>
-                    <li>Start it with <code>~/Apps/Noted/noted</code>. There is no installer or menu entry yet: Noted runs from that folder.</li>
-                    <li>For voice memos, install the audio programs Noted uses: <code>sudo apt install libmpv2 ffmpeg pulseaudio-utils</code> (on Ubuntu 22.04 and Linux Mint 21, <code>libmpv1</code> instead of <code>libmpv2</code>). Without them everything else works, and Noted tells you what is missing when you try to record.</li>
+                    <li>Download <a href="downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz" download><code>Noted-1.0.0-beta.2-linux-x86_64.tar.gz</code></a> (14 MB) to your Downloads folder.</li>
+                    <li>Paste this into a terminal. It checks the download, unpacks it to <code>~/Apps/Noted</code> and starts Noted. If the check fails, it stops with <code>FAILED</code> and unpacks nothing.
+                        <p><code class="hash">cd ~/Downloads &amp;&amp; echo "1515723107086a5a968cba142703ebc4539ffd1eb23dcf652effc8badee47c15  Noted-1.0.0-beta.2-linux-x86_64.tar.gz" | sha256sum -c &amp;&amp; mkdir -p ~/Apps &amp;&amp; tar -xzf Noted-1.0.0-beta.2-linux-x86_64.tar.gz -C ~/Apps &amp;&amp; ~/Apps/Noted/noted</code></p></li>
+                    <li>Next time, start it with <code>~/Apps/Noted/noted</code>. There's no installer or menu entry yet.</li>
+                    <li>For voice memos: <code>sudo apt install libmpv2 ffmpeg pulseaudio-utils</code> (<code>libmpv1</code> on Ubuntu 22.04 and Linux Mint 21). Everything else works without them, and Noted says what's missing when you record.</li>
                 </ol>
 
-                <h3>Verify the download</h3>
-                <p>In a terminal, run:</p>
-                <p><code>sha256sum ~/Downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz</code></p>
-                <p>The long code it prints first must be exactly:</p>
+                <h3>Checksum</h3>
+                <p>Step 2 checks this for you. SHA-256:</p>
                 <p><code class="hash">1515723107086a5a968cba142703ebc4539ffd1eb23dcf652effc8badee47c15</code></p>
-                <p>Also published as <a href="downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz.sha256">Noted-1.0.0-beta.2-linux-x86_64.tar.gz.sha256</a>. If it doesn't match, don't unpack the file.</p>
+                <p>Also published as <a href="downloads/Noted-1.0.0-beta.2-linux-x86_64.tar.gz.sha256">Noted-1.0.0-beta.2-linux-x86_64.tar.gz.sha256</a>.</p>
 
                 <h3>Good to know</h3>
                 <ul>
-                    <li>Your notes are encrypted with keys kept in your login keyring. If that keyring entry is deleted, the notes can't be opened again. That's by design, and it's why an export is worth keeping.</li>
+                    <li>Your notes are encrypted with keys kept in your login keyring. If that keyring entry is deleted, the notes can't be opened again, so keep an export.</li>
                     <li>Deleting the <code>Noted</code> folder doesn't delete your notes. The <a href="index.html">privacy policy</a> explains where they're kept and how to remove them.</li>
                     <li>Biometric unlock isn't offered on Linux. Use a PIN or password.</li>
                     <li>Only one copy of Noted can be open at a time. Starting a second one shows a message instead of switching to the open window.</li>
